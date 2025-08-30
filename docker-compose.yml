@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      - NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY
+      - NEW_RELIC_HOST=staging-collector.newrelic.com
+      - "NEW_RELIC_APP_NAME=Python Dual App 1"
+      - NEW_RELIC_LOG=stdout
+      - NEW_RELIC_LOG_FILE_PATH=stdout
+      - NEW_RELIC_CONFIG_FILE=newrelic.ini
+      - FLASK_APP=hello
+    ports:
+      - "5000:5000"
+      
+  app2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      - NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY
+      - NEW_RELIC_HOST=staging-collector.newrelic.com
+      - "NEW_RELIC_APP_NAME=Python Dual App 2"
+      - NEW_RELIC_LOG=stdout
+      - NEW_RELIC_LOG_FILE_PATH=stdout
+      - NEW_RELIC_CONFIG_FILE=newrelic.ini
+      - FLASK_APP=hello
+    ports:
+      - "3000:5000"

@@ -1,0 +1,3 @@
+flask
+requests
+git+https://github.com/newrelic/newrelic-python-agent.git@feature-core-tracing
