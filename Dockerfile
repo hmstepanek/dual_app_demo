@@ -11,6 +11,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
     ssh
+# Build newrelic wheel locally and rename before installing due to https://github.com/pypa/pip/issues/9628.
+WORKDIR /app/newrelic-python-agent
+RUN pip install build && python -m build --wheel --outdir=/app/newrelic-python-agent && mv *.whl newrelic-11.0.2.dev7+g3e8b8742-py3-none-any.whl && pip install newrelic-11.0.2.dev7+g3e8b8742-py3-none-any.whl
+WORKDIR /app
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
