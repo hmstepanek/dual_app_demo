@@ -12,5 +12,5 @@ Creates two python flask apps that talk to each other. One is running with CAT e
 1. Then go to your browser and access: `http://localhost:5000/`. Note the first request
    will be slow as this blocks while the agent connects to New Relic. You may need to
    refresh several times and wait up to 6 minutes for the data to show up in the APM
-   `Dual App 1 CAT` and `Dual App 2 Remove CAT` entities under the distributed tracing tab.
+   `Dual App 1 CAT` and `Dual App 2 CAT Removed` entities under the distributed tracing tab.
 
