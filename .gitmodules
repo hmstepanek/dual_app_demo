@@ -1,4 +1,4 @@
 [submodule "newrelic-python-agent"]
 	path = newrelic-python-agent
 	url = git@github.com:newrelic/newrelic-python-agent.git
-    branch = feature-core-tracing
+    branch = remove_CAT
